@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternative History Terminal</title>
+    <link rel="stylesheet" href="./frontend/css/global.css?v0.78">
+    <link rel="stylesheet" href="./frontend/css/main.css?v0.78">
+    <style id="filter-style">
+                .scanlines:before {
+                    width: 100%;
+                    height: 2px;
+                    z-index: 2;
+                    background: rgba(0, 0, 0, 0.3);
+                    opacity: 0.75;
+                    animation: scanline 6s linear infinite;
+                    content: "";
+                    position: absolute;
+                }
+                .scanlines:after {
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    z-index: 1;
+                    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.3) 50%);
+                    background-size: 100% 4px;
+                    animation: scanlines 1s steps(60) infinite;
+                    content: "";
+                    position: absolute;
+                }
+    </style>
+</head>
+<body>
+    <div class="borderCRT"></div>
+        <div class="crt">
+                <div class="grain">
+                <div class="scanlines">
+                    <div class="content">
+                        <p id="command">
+                            <span class="user"></span>
+                            <span class="caret"></span>
+                        </p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    <div class="borderCRT"></div>
+
+    <svg width="0" height="0">
+        <defs>
+            <filter id="grainFilter" x="0" y="0" width="200%" height="200%">
+            <feTurbulence type="fractalNoise" baseFrequency="3" numOctaves="1" result="noise"></feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+            </filter>
+        </defs>
+    </svg>
+    <script src="./frontend/js/grain.js?v0.6"></script>
+    <script src="./frontend/js/type.js?v0.159" type="module"></script>
+</body>
+</html>

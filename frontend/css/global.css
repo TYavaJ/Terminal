@@ -1,0 +1,123 @@
+@font-face {
+    font-family: "GlassTTY";
+    src: url(../Glass_TTY_VT220.woff);
+}
+
+:root{
+    --backgroundInner: rgba(70, 85, 50, 1);
+    --backgroundOutter: rgba(25, 30, 15, 1);
+    --textColor: rgb(200 245 130);
+    --opacityColor: rgb(200 245 130 / 50%);
+}
+
+body {
+    background: radial-gradient(circle, var(--backgroundInner) 0%, var(--backgroundOutter) 85%);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    font-family: "GlassTTY";
+    pointer-events: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.borderCRT {
+    background: black;
+    height: 100vh;
+    width: -webkit-fill-available;
+}
+.crt {
+    background-image: url(../img/frame.png);
+    width: 1000%;
+    height: 100vh;
+    background-repeat: round;
+    background-size: cover;
+}
+.grain {
+    filter: url(#grainFilter);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.scanlines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+@keyframes scanline {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+@keyframes scanlines {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 -100%;
+    }
+}
+@media screen and (min-width: 768px) {
+    iframe{
+        width: -webkit-fill-available;
+        height: 20vh;
+        margin-top: 25vh;
+        border: 2px solid var(--backgroundInner);
+    }
+    #disconnect{
+        scale: 90%;
+    }
+}
+
+.disconnectedWrapper{
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    border: 2px solid var(--backgroundInner);
+    padding-top: 150px;
+    padding-bottom: 150px;
+    margin-top: 20px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.disconnectedWrapper .textbox {
+    border: 2px solid var(--textColor);
+    color: var(--textColor);;
+    font-family: 'GlassTTY';
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 15px;
+    text-align: center;
+}
+
+#disconnect{
+    border: 2px solid;
+    scale: 120%;
+}
+
+#disconnect p{
+    margin: 0;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
