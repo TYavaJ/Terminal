@@ -4,9 +4,9 @@ A Custom Terminal System Written in pure HTML/CSS/JS!
 _**THERE IS NO MOBILE SUPPORT**_
 
 ## Try it Yourself
-I created this for a personal project called "Alternative History" this website is used for a semi-realistic rocket simulator. Try it at (https://ah.tyavaj.com/)[https://ah.tyavaj.com/]
+I created this for a personal project called "Alternative History" this website is used for a semi-realistic rocket simulator. Try it at [ah.tyavaj.com](https://ah.tyavaj.com/)
 
-Making [https://terminal.tyavaj.com/](https://terminal.tyavaj.com/) when I get around to it :^
+Making [terminal.tyavaj.com](https://terminal.tyavaj.com/) when I get around to it :^
 
 ## Default Commands
 ```
